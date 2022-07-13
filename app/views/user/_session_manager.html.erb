@@ -15,7 +15,7 @@
       aria-labelledby="navbarDropdown"
     >
       <li><a class="dropdown-item" href="#">Your profile</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><%= link_to "Edit account", edit_user_registration_path,class:"dropdown-item" %></li>
       <li><hr class="dropdown-divider" /></li>
       <%= button_to "Sign out", destroy_user_session_path,method:
       :delete,class:"dropdown-item" %>
