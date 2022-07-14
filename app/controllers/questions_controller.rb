@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
+    @question.user=current_user
 
     respond_to do |format|
       if @question.save
@@ -66,6 +67,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:description)
+      params.require(:question).permit(:description,:name)
     end
 end
