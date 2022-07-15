@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    @answers=@question.answers.order(created_at: :desc)
   end
 
   # GET /questions/new

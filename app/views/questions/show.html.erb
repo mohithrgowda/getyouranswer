@@ -1,10 +1,19 @@
 <!-- <p style="color: green"><%= notice %></p> -->
 
-<%= render @question %>
+<%= render "question",question: @question %>
 
+<% if current_user == @question.user %>
 <div>
-  <%= link_to "Edit this question", edit_question_path(@question) %> |<%= link_to "Destroy", question_path(@question), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+  <%= link_to "Edit this question", edit_question_path(@question) %> |<%=
+  link_to "Destroy", question_path(@question), data: { turbo_method: :delete,
+  turbo_confirm: "Are you sure?" } %>
+</div>
+<% end %>
+
+
+<div class="container">
+  <%= render 'answers/form', question: @question %>
+  <% @answers.each do |answer| %>
+    <%= render 'answers/answer', question: @question, answer: answer %>
+  <% end %>
 </div>

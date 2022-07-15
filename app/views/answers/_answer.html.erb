@@ -1,0 +1,12 @@
+<div class="answer-<%= answer.id %> container"
+    style="border: 1px solid black; padding: 1em; margin: 1em;">
+  <%= answer.user.name %><br />
+  <span>Posted <%= time_ago_in_words(answer.created_at) %></span>
+  <% if current_user == answer.user %>
+    <div class="button-group float-end">
+      <%= button_to "Delete", [question, answer], class:"btn btn-danger", method: :delete %>
+    </div>
+  <% end %>
+  <hr />
+  <%= answer.body %>
+</div>
