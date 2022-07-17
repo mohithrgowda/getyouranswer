@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
-main {
+body {
   background-color: lightgrey;
+}
+.navbar {
+  background-color: black !important;
+}
+.navbar-brand {
+  color: white;
+}
+#logo:hover {
+  color: wheat;
+}
+.nav-link {
+  color: white !important;
 }
