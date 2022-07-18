@@ -75,3 +75,5 @@ end
 gem 'devise'
 
 gem 'will_paginate', '~> 3.3'
+
+gem 'ransack',"~> 2.5"
