@@ -28,3 +28,6 @@ body {
 .nav-link {
   color: white !important;
 }
+#tag {
+  background-color: #0dcaf0;
+}

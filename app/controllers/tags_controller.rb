@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+
+  before_action :authenticate_user! ,except: %i[show index]
+
   def new
     @tag=Tag.new
   end
