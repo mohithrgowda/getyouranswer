@@ -1,0 +1,14 @@
+.jumbotron {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 980px;
+}
+
+#home {
+  width: 100%;
+  background-color: lightgrey;
+  background-image: url("gya.jpeg");
+  background-position: center;
+  background-size: cover;
+}
