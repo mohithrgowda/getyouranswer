@@ -4,7 +4,9 @@
   background-size: cover;
   height: 980px;
 }
-body {
+
+#home {
+  width: 100%;
   background-color: lightgrey;
   background-image: url("gya.jpeg");
   background-position: center;
