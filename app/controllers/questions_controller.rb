@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1 or /questions/1.json
   def show
     @answers=@question.answers.order(created_at: :desc)
+    @question.update(views: @question.views+1)
   end
 
   # GET /questions/new

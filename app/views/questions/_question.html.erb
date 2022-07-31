@@ -22,6 +22,7 @@
         <h5 class="card-text">
           <%= truncate(question.description, length: 100) %>
         </h5>
+        <h6><%= pluralize(question.views,"view") %></h6>
         <% if question.tags.any? %>
         <div mt-2><%= render question.tags %></div>
 
