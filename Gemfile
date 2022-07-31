@@ -76,4 +76,10 @@ gem 'devise'
 
 gem 'will_paginate', '~> 3.3'
 
+#search
 gem 'ransack',"~> 2.5"
+
+#google-login
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection", "~> 1.0" 
