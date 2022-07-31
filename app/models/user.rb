@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
   has_one_attached :avatar
+  
+  has_many :notifications, as: :recipient, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

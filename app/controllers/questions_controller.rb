@@ -12,6 +12,8 @@ class QuestionsController < ApplicationController
   def show
     @answers=@question.answers.order(created_at: :desc)
     @question.update(views: @question.views+1)
+
+    mark_notifications_as_read
   end
 
   # GET /questions/new
@@ -59,6 +61,12 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to questions_url ,notice: "Question was successfully destroyed" }
       format.json { head :no_content }
+    end
+  end
+  def mark_notifications_as_read
+    if current_user
+      notifications_to_mark_as_read = @question.notifications_as_question.where(recipient: current_user)
+      notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
     end
   end
 
