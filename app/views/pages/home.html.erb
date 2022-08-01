@@ -1,11 +1,17 @@
 <div id="home">
   <div class="jumbotron justify-content-md-center">
-    <h1 class="display-4 ">Have a question ?</h1>
-    <p class="lead ">
-     <strong>Get your answer</strong> is a platform where you can post your questions and get answers from other users
-    </p>
-    <p class="lead">
-         <%= link_to "Sign up", new_user_registration_path %>
-    </p>
+    <div class="container" id="homediv">
+      <h1 class="display-4">Have a question ?</h1>
+      <h6 class="lead">
+        Just post it on
+        <strong style="font-weight: 600">Get your answer</strong> , a platform
+        where you can post your thoughts and find the
+        <strong style="font-weight: 600">best answer</strong>
+      </h6>
+      <p class="lead">
+        <%= link_to "Get started !",new_user_registration_path,class:"btn
+        btn-primary btn-lg mt-3" %>
+      </p>
+    </div>
   </div>
 </div>

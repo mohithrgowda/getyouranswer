@@ -19,11 +19,15 @@
             <%= link_to question.description, question_path(question), class:
             "text-success" %>
           </h5> -->
-        <h5 class="card-text">
+        <h4 class="card-text">
           <%= truncate(question.description, length: 100) %>
-        </h5>
+        </h4>
         <h6><%= pluralize(question.views,"view") %></h6>
-        <% if question.tags.any? %>
+
+        <% if controller.action_name == "index" %>
+          <h6><%= question.answers.count %> answers</h6>
+        <% end %>
+         <% if question.tags.any? %>
         <div mt-2><%= render question.tags %></div>
 
         <% end %> <br />
